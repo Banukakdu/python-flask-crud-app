@@ -1,0 +1,67 @@
+{% include "header.html" %}
+
+<link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+
+{% block body %}
+   <div class="container">
+       <div class="row">
+           <div class="col md-12">
+               <h2>Employee List <a href="/" class="btn btn-success pull-right" >Back</a>
+                    </h2>
+
+
+
+
+                <table class="table table-striped">
+                    <tr>
+
+                        <th>EMP_NAME</th>
+                        <th>EMP_ADDRESS</th>
+                        <th>DESIGNATION</th>
+                        <th>DOB</th>
+                        <th>TELEPHONE</th>
+                        <th>EMAIL</th>
+                        <th>DEPT_NAME</th>
+
+                    </tr>
+
+                    {% for row in employee%}
+                    <tr>
+
+
+                        <td>{{row.1}}</td>
+                        <td>{{row.2}}</td>
+                        <td>{{row.3}}</td>
+                        <td>{{row.4}}</td>
+                        <td>{{row.5}}</td>
+                        <td>{{row.6}}</td>
+                        <td>{{row.7}}</td>
+
+
+                    </tr>
+
+                    {% endfor %}
+
+                </table>
+
+
+
+           </div>
+       </div>
+
+   </div>
+
+{% endblock %}
+
+   {% include "footer.html" %}
+
+
+</div>
+
+
+</body>
+
+<script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.2.1.min.js') }}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+
+</html>
